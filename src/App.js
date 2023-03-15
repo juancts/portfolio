@@ -4,7 +4,6 @@ import Lsidebar from "./components/Lsidebar/Lsidebar";
 import Rsidebar from "./components/Rsidebar/Rsidebar";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Form from "./components/Form/Form";
 import { useState } from "react";
 
 function App() {
