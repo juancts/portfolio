@@ -2,6 +2,7 @@ import {
   Box,
   Chip,
   Divider,
+  Grid,
   ImageList,
   ImageListItem,
   ImageListItemBar,
@@ -13,41 +14,39 @@ import t1 from "../../assets/img/t1.png";
 import t2 from "../../assets/img/t2.png";
 import t3 from "../../assets/img/t3.png";
 import t4 from "../../assets/img/t4.png";
-import styled from "@emotion/styled";
 
 const photos = [t1, t2, t3, t4];
 
-const StyledPhotos = styled("images")(({ theme }) => ({
-  display: "flex-wrap",
-  padding: theme.spacing(3, 0),
-  [theme.breakpoints.up("md")]: {
-    display: "block",
-  },
-}));
-
 export default function Work() {
   return (
-    <Box mt={10}>
+    <Box p={3} mt={10}>
       <Divider>
         <Chip label="SOME OF MY WORK" />
       </Divider>
-      <StyledPhotos>
-        <Typography variant="h5" color="primary">
-          My Work
-        </Typography>
-        <ImageList>
+      <Typography variant="h5" color="primary">
+        My Work
+      </Typography>
+      
+        <Grid
+          p={3}
+          container
+          spacing={{ xs: 2, md: 2 }}
+          columns={{ xs: 1, sm: 2, md: 4 }}
+        >
           {itemData.map((item, i) => (
-            <ImageListItem key={i}>
-              <img src={photos[i]} alt={item.title} loading="lazy" />
-              <ImageListItemBar
-                title={item.title}
-                subtitle={<span>tech: {item.tech}</span>}
-                position="below"
-              />
-            </ImageListItem>
+            <Grid p={3} justifyContent="space-between" xs={1} md={2} key={i}>
+              <ImageListItem>
+                <img src={photos[i]} alt={item.title} loading="lazy" />
+                <ImageListItemBar
+                  title={item.title}
+                  subtitle={<span>tech: {item.tech}</span>}
+                  position="below"
+                />
+              </ImageListItem>
+            </Grid>
           ))}
-        </ImageList>
-      </StyledPhotos>
+        </Grid>
+      
     </Box>
   );
 }

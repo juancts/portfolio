@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Studies() {
   return (
-    <Box mt={10}>
+    <Box p={3} mt={10} sx={{ flexGrow: 1 }}>
       <Divider>
         <Chip label="ABOUT MY STUDIES" />
       </Divider>

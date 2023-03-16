@@ -9,13 +9,6 @@ const StyledToolbar = styled(Toolbar)({
   justifyContent: "space-Between",
 });
 
-// const Search = styled("div")(({theme})=>({
-//     backgroundColor:"white",
-//     alignItems: "center",
-//     width: "30%",
-//     borderRadius: theme.shape.borderRadius,
-    
-// }));
 
 const Icons = styled("Box")(({theme})=>({
         display: "none",
@@ -52,7 +45,8 @@ export default function Navbar() {
     }
 
   return (
-    <AppBar position="sticky">
+    
+    <AppBar  position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{display:{xs:"none", sm:"block"}}}>Welcome to my personal Web Portfolio</Typography>
         <Home sx={{display:{xs:"block", sm:"none"}}}/>

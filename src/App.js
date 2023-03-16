@@ -15,25 +15,38 @@ function App() {
   });
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Box bgcolor={"background.default"} alignItems="center" color={"text.primary"}>
+    <ThemeProvider>
+      <Box>
         <Navbar />
-        <Stack
-          display="flex"
-          direction="row"
-          justifyContent="center"
-          spacing={2}
-        >
-          <Lsidebar  setMode={setMode} mode={mode}/>
+        <Stack direction="row" spacing={2} justifyContent="space-between">
+          <Lsidebar setMode={setMode} mode={mode} />
           <Feed />
           <Rsidebar />
         </Stack>
-        <Box mt={20}>
-          <Footer />
-        </Box>
+        <Footer />
       </Box>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+// <ThemeProvider theme={darkTheme}>
+// <Box bgcolor={"background.default"} alignItems="center" color={"text.primary"}>
+//   <Navbar />
+//   <Stack
+//   paddingLeft={22}
+//     display="flex"
+//     direction="row"
+//     justifyContent="center"
+//     spacing={2}
+//   >
+//     <Lsidebar  setMode={setMode} mode={mode}/>
+//     <Feed />
+//     <Rsidebar />
+//   </Stack>
+//   <Box mt={20}>
+//     <Footer />
+//   </Box>
+// </Box>
+// </ThemeProvider>

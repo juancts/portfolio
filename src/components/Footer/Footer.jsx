@@ -41,26 +41,49 @@ export default function Footer() {
     <Box>
       <StyledFooter>
         <Grid container spacing={12} alignContent="center" alignItems="center">
-          <Grid sx={{ display: { xs: "none", sm: "none", md:"block" } }} xs={4}>
-            <Typography variant="h2" fontFamily="Square Peg" color="white">
+          <Grid
+               xs={4}
+          >
+            <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
+            <Typography
+              pl={10}
+              variant="h2"
+              fontFamily="Square Peg"
+              color="white"
+            >
               Juan Jose Rodriguez
             </Typography>
+
+            </Box>
           </Grid>
-          <Grid xs={4} sx={{ display: { xs: "none", sm: "none", md:"block" } }}>
-            <Typography color="white">Social Networks:</Typography>
-            <ListItemIcon>
-              <LinkedIn />
-              <Twitter />
-              <Instagram />
-              <GitHub />
-              <Facebook />
-            </ListItemIcon>
+          <Grid xs={4}>
+            <Box sx={{ display: { xs: "block", md: "block" } }}>
+              <Typography color="white">Social Networks:</Typography>
+              <ListItemIcon>
+                <LinkedIn />
+                <Twitter />
+                <Instagram />
+                <GitHub />
+                <Facebook />
+              </ListItemIcon>
+            </Box>
           </Grid>
-          <Grid sx={{ display: { xs: "block", md:"block" } }} xs={4}>
+          <Grid
+            
+            xs={4}
+          >
+            <Box sx={{
+              display: {
+                xs:"none",
+                md: "block",
+              },
+            }}>
             <Typography color="white">Contact:</Typography>
             <Typography color="white">(+34)663687261</Typography>
             <Typography color="white">jotarodriguez@gmail.com</Typography>
             <Typography color="white">Terrassa - Barcelona</Typography>
+
+            </Box>
           </Grid>
         </Grid>
       </StyledFooter>

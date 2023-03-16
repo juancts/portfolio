@@ -21,7 +21,9 @@ const useStyles = makeStyles(() => ({
     alignItems: "center",
     maxHeight: "30vh",
     textAlign: "center",
-    margin: "160px",
+    marginTop:"20px",
+    marginBottom:"30px"
+    
   },
   text: {
     width: "400px",
@@ -79,16 +81,18 @@ export default function Form() {
   };
 
   return (
-    <>
+    <Box>
       <Box mb={5} mt={10}>
         <Divider>
           <Chip label="CONTACT FORM" />
         </Divider>
       </Box>
       <Box className={classes.title}>
-        <Typography variant="h4">Please feel free to contact me </Typography>
+        <Typography variant="h4">Contact me </Typography>
       </Box>
-      <Box className={classes.loginscreen}>
+      <Box paddingTop={10} paddingBottom={10} className={classes.loginscreen}>
+        <Box  >
+
         <form onSubmit={onHandleSubmit}>
           <div>
             <TextField
@@ -136,7 +140,8 @@ export default function Form() {
             </Button>
           </div>
         </form>
+        </Box>
       </Box>
-    </>
+    </Box>
   );
 }

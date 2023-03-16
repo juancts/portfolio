@@ -8,12 +8,12 @@ import Form from '../Form/Form'
 
 export default function Feed() {
   return (
-    <Box flex={4} p={2}>
-      <About />
-      <Studies />
-      <Work />
-      <Skills />
-      <Form />
+    <Box flex={4} justifyContent="center">
+      <About/>
+      <Studies/>
+      <Work/>
+      <Skills/>
+      <Form/>
     </Box>
     
   )

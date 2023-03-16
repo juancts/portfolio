@@ -21,8 +21,8 @@ import React from "react";
 
 export default function Sidebar({mode, setMode}) {
   return (
-    <Box flex={1} pl={15} sx={{ display: { xs: "none", sm: "block" } }}>
-      <Box sx={{position:{md:"block",xl:"fixed"}}}>
+    <Box flex={2} p={3} sx={{display:{xs:"none", sm:"block"}}}>
+      <Box position="fixed">
 
       <List>
         <ListItem disablePadding>
