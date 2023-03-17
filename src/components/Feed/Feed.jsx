@@ -9,9 +9,9 @@ import Form from '../Form/Form'
 export default function Feed() {
   return (
     <Box flex={5} justifyContent="center">
+      <Work/>
       <About/>
       <Studies/>
-      <Work/>
       <Skills/>
       <Form/>
     </Box>

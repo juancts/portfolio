@@ -19,7 +19,8 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    maxHeight: "30vh",
+    maxHeight: "20vh",
+    width:"100%",
     textAlign: "center",
     marginTop:"20px",
     marginBottom:"30px"
@@ -107,6 +108,7 @@ export default function Form() {
 
           <div>
             <TextField
+            fullWidth
               className={classes.text}
               type="email"
               label="Email"
@@ -117,6 +119,7 @@ export default function Form() {
 
           <div>
             <TextareaAutosize
+            fullWidth
               className={classes.text}
               type="text"
               label="Message"
