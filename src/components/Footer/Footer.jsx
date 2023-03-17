@@ -12,6 +12,7 @@ import WebFont from "webfontloader";
 
 const StyledFooter = styled("footer")(({ theme }) => ({
   backgroundColor: "#1760a5",
+  opacity: 1, // hacer el componente completamente opaco
   display: "flex",
   height: "150px",
   justifyContent: "space-evenly",
@@ -22,7 +23,6 @@ const StyledFooter = styled("footer")(({ theme }) => ({
   "& > div": {
     textAlign: "center",
   },
-  //position: "fixed", // fix the footer to the bottom
   bottom: 0,
   left: 0,
   width: "100%",
@@ -38,7 +38,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <Box bgcolor="red" zIndex="tooltip">
+    <Box>
       <StyledFooter>
         <Grid container spacing={12} alignContent="center" alignItems="center">
           <Grid

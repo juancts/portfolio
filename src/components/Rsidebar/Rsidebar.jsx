@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Rsidebar() {
   return (
-    <Box flex={2} p={3} sx={{display:{xs:"none", sm:"block"}}}>
-      <Box position="fixed">
+    <Box  flex={2} p={3} pl={6} sx={{display:{xs:"none", sm:"block"}}}>
+      <Box sx={{position:{md:"block",xl:"fixed"}}}>
       <Typography variant="h5" marginTop={5} color="primary">SOFT SKILLS</Typography>
         <Typography>
         🔸 Positive Attitude

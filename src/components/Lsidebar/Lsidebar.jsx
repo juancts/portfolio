@@ -28,8 +28,8 @@ export default function Sidebar({ mode, setMode }) {
   };
 
   return (
-    <Box flex={2} p={3} sx={{ display: { xs: "none", sm: "block" } }}>
-      <Box position="fixed">
+    <Box flex={1} p={3} pl={10} sx={{ display: { xs: "none", sm: "block" } }}>
+      <Box sx={{position:{md:"block",xl:"fixed"}}}>
         <List>
           <ListItem disablePadding>
             <ListItemButton
