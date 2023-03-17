@@ -49,7 +49,8 @@ export default function Navbar() {
         behavior: "smooth",
         block: "start",
       });
-      handleClose();
+      console.log(id)
+      // handleClose();
     };
 
   return (
