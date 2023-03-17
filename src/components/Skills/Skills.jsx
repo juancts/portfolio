@@ -14,7 +14,7 @@ import {
 
 export default function Skills() {
   return (
-    <Box p={3} mt={10}>
+    <Box id="skills" p={3} mt={10}>
       <Divider>
         <Chip label="MY SKILLS | TECHNOLOGY" />
       </Divider>

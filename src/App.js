@@ -5,6 +5,8 @@ import Rsidebar from "./components/Rsidebar/Rsidebar";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { useState } from "react";
+import './styles/global.css';
+
 
 function App() {
   const [mode, setMode] = useState("light");

@@ -44,6 +44,14 @@ export default function Navbar() {
         SetOpen(false);
     }
 
+    const handleAutoScroll = (id) => {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      handleClose();
+    };
+
   return (
     
     <AppBar  position="sticky">
@@ -52,12 +60,12 @@ export default function Navbar() {
         <Home sx={{display:{xs:"block", sm:"none"}}}/>
         {/* <Search><InputBase placeholder="Search..." /></Search> */}
         <Icons>
-            <Home sx={{display:{xs:"none", sm:"block"}}}/>
-            <Description />
-            <LocalLibrary />
-            <Work />
-            <DoneAll />
-            <Mail />
+            <Home sx={{display:{xs:"none", sm:"block"}}} onClick={() => handleAutoScroll("about")}/>
+            <Description onClick={() => handleAutoScroll("about")}/>
+            <LocalLibrary onClick={() => handleAutoScroll("studies")}/>
+            <Work onClick={() => handleAutoScroll("work")}/>
+            <DoneAll onClick={() => handleAutoScroll("skills")}/>
+            <Mail onClick={() => handleAutoScroll("form")}/>
             <Avatar onClick={handleClick} src={perfil} sx={{width:30, height:30}}/>
         </Icons>
         <UserBox>
@@ -79,12 +87,12 @@ export default function Navbar() {
           horizontal: 'left',
         }}
       >
-        <MenuItem >Home</MenuItem>
-        <MenuItem >About Me</MenuItem>
-        <MenuItem >My Services</MenuItem>
-        <MenuItem >My Work</MenuItem>
-        <MenuItem >Skills & Tools</MenuItem>
-        <MenuItem >Contact</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("about")}>Home</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("about")}>About Me</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("studies")}>Studies</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("work")}>My Work</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("skills")}>Skills</MenuItem>
+        <MenuItem onClick={() => handleAutoScroll("form")}>Contact</MenuItem>
       </Menu>
     </AppBar>
   );

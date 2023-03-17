@@ -19,7 +19,7 @@ const photos = [t1, t2, t3, t4];
 
 export default function Work() {
   return (
-    <Box p={3} mt={10}>
+    <Box id="work" p={3} mt={10}>
       <Divider>
         <Chip label="SOME OF MY WORK" />
       </Divider>

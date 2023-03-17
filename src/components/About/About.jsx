@@ -15,7 +15,7 @@ import perfil from "../../assets/img/perfil1.jpg";
 
 export default function About() {
   return (
-    <Box>
+    <Box id="about">
       <Card>
         <CardHeader title="Hi!, Im Juan!" subheader="FullStack Developer" />
         <CardMedia

@@ -36,12 +36,12 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     fontWeight: "bold",
     textDecoration: "none",
-    color: "#fff",
-    backgroundColor: "#291e38",
+    color: "primary",
+    backgroundColor: "secondary",
     marginTop: "15px",
   },
   btnText: {
-    color: "secondary",
+    color: "primary",
   },
   title: {
     display: "flex",
@@ -81,7 +81,7 @@ export default function Form() {
   };
 
   return (
-    <Box>
+    <Box id="form">
       <Box mb={5} mt={10}>
         <Divider>
           <Chip label="CONTACT FORM" />
@@ -91,7 +91,7 @@ export default function Form() {
         <Typography variant="h4">Contact me </Typography>
       </Box>
       <Box paddingTop={10} paddingBottom={10} className={classes.loginscreen}>
-        <Box  >
+        <Box>
 
         <form onSubmit={onHandleSubmit}>
           <div>
@@ -135,7 +135,7 @@ export default function Form() {
           </div>
 
           <div className={classes.btnLogin}>
-            <Button type="submit" className={classes.btnText}>
+            <Button variant="contained" type="submit" className={classes.btnText}>
               SUBMIT MESSAGE
             </Button>
           </div>

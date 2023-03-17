@@ -38,7 +38,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <Box>
+    <Box bgcolor="red" zIndex="tooltip">
       <StyledFooter>
         <Grid container spacing={12} alignContent="center" alignItems="center">
           <Grid
