@@ -58,7 +58,7 @@ export default function Navbar() {
     <AppBar  position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{display:{xs:"none", sm:"block"}}}>Welcome to my personal Web Portfolio</Typography>
-        <Home sx={{display:{xs:"block", sm:"none"}}}/>
+        <Home sx={{display:{xs:"block", sm:"none"}}} onClick={() => handleAutoScroll("about")}/>
         {/* <Search><InputBase placeholder="Search..." /></Search> */}
         <Icons>
             <Home sx={{display:{xs:"none", sm:"block"}}} onClick={() => handleAutoScroll("about")}/>
