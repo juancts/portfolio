@@ -79,7 +79,7 @@ export default function Form() {
   };
 
   return (
-    <Box  textAlign="center" p={{xs:"0", md:"3"}} id="form">
+    <Box width="100%"  textAlign="center" p={{xs:"0", md:"3"}} id="form">
       <Box mb={5} mt={10}>
         <Divider>
           <Chip label="CONTACT FORM" />

@@ -22,6 +22,14 @@ export const itemData = [
         img: 4,
         title: 'Maintenance of the web for CTB Group',
         tech: 'Wordpres',
-        link:'https://ctdominicana.com/'
+        link:'https://ctbgroup.es/'
       },
+      {
+        img: 5,
+        title: 'Full Stack development',
+        tech: 'Html, javascript, php, bootstrap',
+        link:'http://artycla.com/'
+      }
+
+
 ]
