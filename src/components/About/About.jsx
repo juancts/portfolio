@@ -5,6 +5,8 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  Chip,
+  Divider,
   IconButton,
   Typography,
 } from "@mui/material";
@@ -16,6 +18,11 @@ import perfil from "../../assets/img/perfil1.jpg";
 export default function About() {
   return (
     <Box id="about">
+       <Box mb={5} mt={10}>
+        <Divider>
+          <Chip label="ABOUT ME" />
+        </Divider>
+      </Box>
       <Card>
         <CardHeader title="Hi!, Im Juan!" subheader="FullStack Developer" />
         <CardMedia
@@ -27,17 +34,7 @@ export default function About() {
         />
         <CardContent>
           <Typography >
-            Hello!, I am a Full Stack developer with a degree in computer
-            science with experience in different technologies such as SQL, HTML,
-            CSS, JavaScript, Node.js, React, postgres, Typescript, MongoDB, Salesforce and
-            more. I am passionate about creating innovative solutions and
-            working in challenging and innovative environments. I am focused,
-            committed, and believe in open communication and collaboration to
-            achieve common goals. If you are looking for someone with a positive
-            attitude, who finds value in helping other people and colleagues
-            with soft skills suitable for teamwork, please contact me. I am
-            willing to continue growing professionally and contribute to the
-            success of your company.
+          I am a Full Stack developer with a degree in computer science and experience in different technologies such as SQL, HTML, CSS, JavaScript, Node.js, React, postgres, Typescript, MongoDB, Salesforce and more. I am passionate about creating innovative solutions and working in challenging environments, and believe in open communication and collaboration. I am willing to continue growing professionally and contribute to the success of your team.
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

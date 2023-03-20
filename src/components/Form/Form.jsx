@@ -20,14 +20,11 @@ const useStyles = makeStyles(() => ({
     justifyContent: "center",
     alignItems: "center",
     maxHeight: "20vh",
-    width:"100%",
-    textAlign: "center",
-    marginTop:"20px",
-    marginBottom:"30px"
+       
     
   },
   text: {
-    width: "400px",
+    
     height: "5rem",
     lineHeight: "1.6em",
   },
@@ -39,7 +36,7 @@ const useStyles = makeStyles(() => ({
     textDecoration: "none",
     color: "primary",
     backgroundColor: "secondary",
-    marginTop: "15px",
+    marginTop: "35px",
   },
   btnText: {
     color: "primary",
@@ -82,22 +79,23 @@ export default function Form() {
   };
 
   return (
-    <Box id="form">
+    <Box  textAlign="center" p={{xs:"0", md:"3"}} id="form">
       <Box mb={5} mt={10}>
         <Divider>
           <Chip label="CONTACT FORM" />
         </Divider>
       </Box>
-      <Box className={classes.title}>
-        <Typography variant="h4">Contact me </Typography>
-      </Box>
-      <Box paddingTop={10} paddingBottom={10} className={classes.loginscreen}>
-        <Box>
+      <Typography variant="h4">Contact me </Typography>
+      
+      <Box paddingTop={10} paddingBottom={10}>
+      
+        <Box p={2} className={classes.loginscreen}>
+        
 
         <form onSubmit={onHandleSubmit}>
           <div>
             <TextField
-              fullWidth
+              size="small"
               className={classes.text}
               type="text"
               label="Name"
@@ -108,7 +106,7 @@ export default function Form() {
 
           <div>
             <TextField
-            fullWidth
+            size="small"
               className={classes.text}
               type="email"
               label="Email"
@@ -118,22 +116,17 @@ export default function Form() {
           </div>
 
           <div>
-            <TextareaAutosize
-            fullWidth
+            <TextField
+            size="small"
               className={classes.text}
               type="text"
               label="Message"
               required
               name="message"
-              variant="outlined"
               placeholder="Message here..."
-              style={{
-                width: 400,
-                height: 100,
-                borderColor: "#909090",
-                borderWidth: 1.3,
-                marginBottom: "10px",
-              }}
+              multiline
+              rows={4}
+              
             />
           </div>
 

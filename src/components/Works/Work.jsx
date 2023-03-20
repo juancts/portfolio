@@ -19,7 +19,7 @@ const photos = [t1, t2, t3, t4];
 
 export default function Work() {
   return (
-    <Box id="work" p={3} mt={10}>
+    <Box id="work" p={3} mt={5}>
       <Divider>
         <Chip label="SOME OF MY WORK" />
       </Divider>
@@ -35,8 +35,11 @@ export default function Work() {
         >
           {itemData.map((item, i) => (
             <Grid p={3} justifyContent="space-between" xs={1} md={2} key={i}>
+              
               <ImageListItem>
+              <a href={item.link} target="_blank">
                 <img src={photos[i]} alt={item.title} loading="lazy" />
+                </a>
                 <ImageListItemBar
                   title={item.title}
                   subtitle={<span>tech: {item.tech}</span>}

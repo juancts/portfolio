@@ -6,7 +6,7 @@ import {
   LinkedIn,
   Twitter,
 } from "@mui/icons-material";
-import { Box, Grid, ListItemIcon, Typography } from "@mui/material";
+import { Box, Grid, Link, ListItemIcon, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import WebFont from "webfontloader";
 
@@ -41,48 +41,69 @@ export default function Footer() {
     <Box>
       <StyledFooter>
         <Grid container spacing={12} alignContent="center" alignItems="center">
-          <Grid
-               xs={4}
-          >
+          <Grid xs={4}>
             <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
-            <Typography
-              pl={10}
-              variant="h2"
-              fontFamily="Square Peg"
-              color="white"
-            >
-              Juan Jose Rodriguez
-            </Typography>
-
+              <Typography
+                pl={10}
+                variant="h2"
+                fontFamily="Square Peg"
+                color="white"
+              >
+                Juan Jose Rodriguez
+              </Typography>
             </Box>
           </Grid>
           <Grid xs={4}>
-            <Box sx={{ display: { xs: "block", md: "block" } }}>
+            <Box
+              alignItems="center"
+              textAlign="center"
+              sx={{
+                display: { xs: "block", md: "block" },
+                paddingLeft: { xs: "80px" },
+              }}
+            >
               <Typography color="white">Social Networks:</Typography>
               <ListItemIcon>
-                <LinkedIn />
-                <Twitter />
-                <Instagram />
-                <GitHub />
+                <Link href="https://www.linkedin.com/in/jjrodriguez81/" color="inherit">
+                  <LinkedIn />
+                </Link>
+                <Link href="https://twitter.com/jotar81" color="inherit">
+                  <Twitter />
+                </Link>
+
+                <Link href="https://instagram.com/jeijeiok?igshid=ZDdkNTZiNTM="  color="inherit">
+                  <Instagram />
+                </Link>
+                <Link href="https://github.com/juancts" color="inherit">
+                  <GitHub />
+                </Link>
+                <Link href="https://www.facebook.com/jjrodriguez81" color="inherit">
                 <Facebook />
+                </Link>
               </ListItemIcon>
             </Box>
           </Grid>
-          <Grid
-            
-            xs={4}
-          >
-            <Box sx={{
-              display: {
-                xs:"none",
-                md: "block",
-              },
-            }}>
-            <Typography color="white">Contact:</Typography>
-            <Typography color="white">(+34)663687261</Typography>
-            <Typography color="white">jotarodriguez@gmail.com</Typography>
-            <Typography color="white">Terrassa - Barcelona</Typography>
-
+          <Grid xs={4}>
+            <Box
+              sx={{
+                display: {
+                  xs: "none",
+                  md: "block",
+                },
+              }}
+            >
+              <Typography color="white">Contact:</Typography>
+              <Typography color="white">
+                <Link href="https://wa.me/34663687261" color="inherit">
+                  (+34)663687261
+                </Link>
+              </Typography>
+              <Typography color="white">
+                <Link href="mailto:jotarodriguez@gmail.com" color="inherit">
+                  jotarodriguez@gmail.com
+                </Link>
+              </Typography>
+              <Typography color="white">Terrassa - Barcelona</Typography>
             </Box>
           </Grid>
         </Grid>

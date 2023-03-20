@@ -27,7 +27,7 @@ export default function Skills() {
             p={6}
             container
             spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 3, sm: 6, md: 8, xl: 12 }}
+            columns={{ xs: 3, md: 4, xl: 12 }}
           >
             
             <Grid xs={1}>
