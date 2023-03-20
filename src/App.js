@@ -4,7 +4,7 @@ import Lsidebar from "./components/Lsidebar/Lsidebar";
 import Rsidebar from "./components/Rsidebar/Rsidebar";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import './styles/global.css';
 
 
@@ -16,16 +16,22 @@ function App() {
     },
   });
 
+  useEffect((mode)=>{
+    mode=setMode;
+  },[mode])
+
+  
+
   return (
-    <ThemeProvider>
-      <Box>
+    <ThemeProvider theme={darkTheme}>
+      <Box bgcolor={"background.default"} color={"text.primary"}>
         <Navbar />
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <Lsidebar setMode={setMode} mode={mode} />
           <Feed />
           <Rsidebar />
         </Stack>
-        <Footer />
+        <Footer mode={mode}/>
       </Box>
     </ThemeProvider>
   );

@@ -5,15 +5,18 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
+  Checkbox,
   Chip,
   Divider,
   IconButton,
+  Link,
   Typography,
 } from "@mui/material";
 import ShareIcon from "@mui/icons-material/Share";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import React from "react";
-import perfil from "../../assets/img/perfil1.jpg";
+import perfil from "../../assets/img/perfil3.jpg";
+import { Favorite, FavoriteBorder, GitHub, LinkedIn, Twitter, Instagram, Facebook } from "@mui/icons-material";
 
 export default function About() {
   return (
@@ -39,10 +42,11 @@ export default function About() {
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+          <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite sx={{color:"red"}} />} />
           </IconButton>
           <IconButton aria-label="share">
-            <ShareIcon />
+            
+         
           </IconButton>
         </CardActions>
       </Card>

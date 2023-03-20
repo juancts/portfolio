@@ -7,11 +7,12 @@ import {
   Twitter,
 } from "@mui/icons-material";
 import { Box, Grid, Link, ListItemIcon, Typography } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import React, { useEffect } from "react";
 import WebFont from "webfontloader";
 
 const StyledFooter = styled("footer")(({ theme }) => ({
-  backgroundColor: "#1760a5",
+   //"#1760a5",
   opacity: 1, // hacer el componente completamente opaco
   display: "flex",
   height: "150px",
@@ -28,7 +29,11 @@ const StyledFooter = styled("footer")(({ theme }) => ({
   width: "100%",
 }));
 
-export default function Footer() {
+export default function Footer({mode}) {
+  let color="";
+  mode === "light" ? color="#1760a5" : color="#272727";
+  console.log("COLOR:",color)
+  
   useEffect(() => {
     WebFont.load({
       google: {
@@ -37,9 +42,12 @@ export default function Footer() {
     });
   }, []);
 
+
+
   return (
-    <Box>
-      <StyledFooter>
+    <Box backgroundColor={color} color={"text.primary"}>
+      
+      <StyledFooter >
         <Grid container spacing={12} alignContent="center" alignItems="center">
           <Grid xs={4}>
             <Box sx={{ display: { xs: "none", sm: "none", md: "block" } }}>
@@ -62,7 +70,7 @@ export default function Footer() {
                 paddingLeft: { xs: "80px" },
               }}
             >
-              <Typography color="white">Social Networks:</Typography>
+              
               <ListItemIcon>
                 <Link href="https://www.linkedin.com/in/jjrodriguez81/" color="inherit">
                   <LinkedIn />
