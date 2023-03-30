@@ -2,7 +2,7 @@
 export const itemData = [
     {
       img: 1,
-      title: 'Logístic & Transport',
+      title: 'Logistic & Transport',
       tech: 'FulStack dev - Html, php, MySql, phpMyAdmin',
       link:'https://ctdominicana.com/'
     },
@@ -20,7 +20,7 @@ export const itemData = [
     },
     {
         img: 4,
-        title: 'Logístic & Transport',
+        title: 'Logistic & Transport',
         tech: 'Wordpres - Maintenance of the web',
         link:'https://ctbgroup.es/'
       },
