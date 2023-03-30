@@ -8,13 +8,13 @@ export const itemData = [
     },
     {
       img: 2,
-      title: 'Ecommerce Maintenance',
+      title: 'Ecommerce Clothing',
       tech: 'Wordpres, woocommerce, plugsin',
       link:'https://eulaliadelucia.com/'
     },
     {
       img: 3,
-      title: 'FullStack Development - Ecommerce',
+      title: 'Ecommerce Clothing',
       tech: 'React, Redux, Nodejs, Postgres, tailwind',
       link:'https://unbardo.com.ar'
     },
