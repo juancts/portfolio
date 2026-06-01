@@ -1,97 +1,85 @@
-import { Description, DoneAll, Home, LocalLibrary, Mail, Work } from "@mui/icons-material";
-import { AppBar, Avatar, Menu, MenuItem, Toolbar, Typography, styled } from "@mui/material";
-import React, { useState } from "react";
-import perfil from "../../assets/img/perfil.jpg"
+import {
+  AppBar,
+  Avatar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Stack,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import { DarkMode, LightMode, MailOutline } from "@mui/icons-material";
+import perfil from "../../assets/img/perfil.jpg";
 
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Studies", href: "#studies" },
+  { label: "Work", href: "#work" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
 
-const StyledToolbar = styled(Toolbar)({
-  display: "flex",
-  justifyContent: "space-Between",
-});
-
-// const Search = styled("div")(({theme})=>({
-//     backgroundColor:"white",
-//     alignItems: "center",
-//     width: "30%",
-//     borderRadius: theme.shape.borderRadius,
-    
-// }));
-
-const Icons = styled("Box")(({theme})=>({
-        display: "none",
-        alignItems: "center",
-        gap: "20px",
-        [theme.breakpoints.up("sm")]:{
-            display:"flex",
-        }
-}))
-
-//FOR SMALL DISLAYS
-const UserBox = styled("Box")(({theme})=>({
-    display:"flex",
-    alignItems:"center",
-    gap:"10px",
-    [theme.breakpoints.up("sm")]:{
-        display:"none",
-    }
-}))
-
-
-
-export default function Navbar() {
-    const[open, SetOpen] = useState(false);
-
-
-
-    const handleClick = (e)=>{
-        SetOpen(true);
-    }
-
-    const handleClose = (e)=>{
-        SetOpen(false);
-    }
-
+export default function Navbar({ mode, setMode }) {
   return (
-    <AppBar position="sticky">
-      <StyledToolbar>
-        <Typography variant="h6" sx={{display:{xs:"none", sm:"block"}}}>Welcome to my personal Web Portfolio</Typography>
-        <Home sx={{display:{xs:"block", sm:"none"}}}/>
-        {/* <Search><InputBase placeholder="Search..." /></Search> */}
-        <Icons>
-            <Home sx={{display:{xs:"none", sm:"block"}}}/>
-            <Description />
-            <LocalLibrary />
-            <Work />
-            <DoneAll />
-            <Mail />
-            <Avatar onClick={handleClick} src={perfil} sx={{width:30, height:30}}/>
-        </Icons>
-        <UserBox>
-          <Typography>Juan R.</Typography>
-          <Avatar onClick={handleClick} src={perfil} sx={{width:30, height:30}}/>
-        </UserBox>
-      </StyledToolbar>
-      <Menu
-        id="menu"
-        aria-labelledby="demo-positioned-button"
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <MenuItem >Home</MenuItem>
-        <MenuItem >About Me</MenuItem>
-        <MenuItem >My Services</MenuItem>
-        <MenuItem >My Work</MenuItem>
-        <MenuItem >Skills & Tools</MenuItem>
-        <MenuItem >Contact</MenuItem>
-      </Menu>
+    <AppBar
+      position="sticky"
+      elevation={0}
+      sx={{
+        bgcolor: "rgba(13, 17, 23, 0.78)",
+        backdropFilter: "blur(18px)",
+        borderBottom: "1px solid",
+        borderColor: "rgba(255,255,255,0.08)",
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar disableGutters sx={{ minHeight: 72, gap: 2 }}>
+          <Stack direction="row" alignItems="center" spacing={1.5} sx={{ flex: 1 }}>
+            <Avatar src={perfil} alt="Juan Jose Rodriguez" sx={{ width: 40, height: 40 }} />
+            <Box>
+              <Typography variant="subtitle1" fontWeight={800} lineHeight={1}>
+                Juan J. Rodriguez
+              </Typography>
+              <Typography variant="caption" color="grey.400">
+                Full Stack Developer
+              </Typography>
+            </Box>
+          </Stack>
+
+          <Stack
+            component="nav"
+            direction="row"
+            spacing={0.5}
+            sx={{ display: { xs: "none", md: "flex" } }}
+          >
+            {navItems.map((item) => (
+              <Button key={item.href} href={item.href} color="inherit" size="small">
+                {item.label}
+              </Button>
+            ))}
+          </Stack>
+
+          <Tooltip title={mode === "dark" ? "Light mode" : "Dark mode"}>
+            <IconButton
+              color="inherit"
+              onClick={() => setMode(mode === "dark" ? "light" : "dark")}
+              aria-label="Toggle color mode"
+            >
+              {mode === "dark" ? <LightMode /> : <DarkMode />}
+            </IconButton>
+          </Tooltip>
+
+          <Button
+            href="mailto:jotarodriguez@gmail.com"
+            variant="contained"
+            startIcon={<MailOutline />}
+            sx={{ display: { xs: "none", sm: "inline-flex" } }}
+          >
+            Contact
+          </Button>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 }
