@@ -1,6 +1,20 @@
 import { MailOutline, Phone, Place } from "@mui/icons-material";
-import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Container,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { useState } from "react";
+
+const encodeFormData = (data) =>
+  new URLSearchParams({
+    "form-name": "portfolio-contact",
+    ...data,
+  }).toString();
 
 export default function Form() {
   const [form, setForm] = useState({
@@ -8,6 +22,7 @@ export default function Form() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
 
   const handleChange = (event) => {
     setForm((current) => ({
@@ -16,10 +31,27 @@ export default function Form() {
     }));
   };
 
-  const subject = encodeURIComponent(`Portfolio contact from ${form.name || "visitor"}`);
-  const body = encodeURIComponent(
-    `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-  );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeFormData(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify form submission failed");
+      }
+
+      setForm({ name: "", email: "", message: "" });
+      setStatus("success");
+    } catch (error) {
+      setStatus("error");
+    }
+  };
 
   return (
     <Box
@@ -47,8 +79,8 @@ export default function Form() {
               </Typography>
               <Typography color="text.secondary" sx={{ mt: 2, lineHeight: 1.7 }}>
                 Tell me what you need: a new web app, ecommerce improvements,
-                maintenance, or a clearer digital presence. I will reply from
-                my Gmail directly.
+                maintenance, or a clearer digital presence. Your message will
+                arrive through Netlify Forms.
               </Typography>
             </Box>
 
@@ -70,6 +102,11 @@ export default function Form() {
 
           <Box
             component="form"
+            name="portfolio-contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             sx={{
               p: { xs: 2, sm: 3 },
               bgcolor: "background.paper",
@@ -80,11 +117,18 @@ export default function Form() {
             }}
           >
             <Stack spacing={2}>
+              <input type="hidden" name="form-name" value="portfolio-contact" />
+              <Box sx={{ display: "none" }}>
+                <label>
+                  Do not fill this out: <input name="bot-field" />
+                </label>
+              </Box>
               <TextField
                 name="name"
                 label="Name"
                 value={form.name}
                 onChange={handleChange}
+                required
                 fullWidth
               />
               <TextField
@@ -93,6 +137,7 @@ export default function Form() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
+                required
                 fullWidth
               />
               <TextField
@@ -102,15 +147,28 @@ export default function Form() {
                 onChange={handleChange}
                 multiline
                 minRows={5}
+                required
                 fullWidth
               />
+              {status === "success" && (
+                <Alert severity="success">
+                  Message sent. Thank you, I will reply soon.
+                </Alert>
+              )}
+              {status === "error" && (
+                <Alert severity="error">
+                  The message could not be sent. Please email me directly at
+                  jotarodriguez@gmail.com.
+                </Alert>
+              )}
               <Button
-                href={`mailto:jotarodriguez@gmail.com?subject=${subject}&body=${body}`}
+                type="submit"
                 variant="contained"
                 size="large"
                 startIcon={<MailOutline />}
+                disabled={status === "sending"}
               >
-                Send email
+                {status === "sending" ? "Sending..." : "Send message"}
               </Button>
             </Stack>
           </Box>
