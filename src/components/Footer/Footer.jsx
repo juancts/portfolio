@@ -23,7 +23,7 @@ export default function Footer() {
               Juan Jose Rodriguez
             </Typography>
             <Typography color="grey.500" variant="body2">
-              Full Stack Developer - Terrassa, Barcelona
+              Full Stack Developer - Vacarisses, Barcelona
             </Typography>
           </Box>
 

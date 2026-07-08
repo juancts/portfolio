@@ -28,7 +28,7 @@ export default function About() {
           <Stack spacing={3}>
             <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
               <Chip label="Available for web projects" color="secondary" />
-              <Chip icon={<Place />} label="Terrassa - Barcelona" variant="outlined" />
+              <Chip icon={<Place />} label="Vacarisses - Barcelona" variant="outlined" />
             </Stack>
 
             <Box>
