@@ -1,8 +1,8 @@
-import { ArrowForward, MailOutline, Place } from "@mui/icons-material";
+import { ArrowForward, Description, MailOutline, Place } from "@mui/icons-material";
 import { Box, Button, Chip, Container, Stack, Typography } from "@mui/material";
 import perfil from "../../assets/img/perfil1.jpg";
 
-const highlights = ["React", "Node.js", "Postgres", "Salesforce"];
+const highlights = ["Salesforce", "Integrations", "AI tools", "React"];
 
 export default function About() {
   return (
@@ -48,10 +48,12 @@ export default function About() {
                 color="text.secondary"
                 sx={{ mt: 3, maxWidth: 680, lineHeight: 1.7 }}
               >
-                Hi, I am Juan. I build web experiences with React, Node.js,
-                databases and a practical product mindset. I like clear
-                interfaces, direct communication and teams that move with
-                purpose.
+                Hi, I am Juan. I build web experiences and Salesforce solutions
+                with React, Node.js, databases and a practical product mindset.
+                I have experience with integrations, REST/SOAP services, data
+                migration processes using Workbench and Data Loader, and
+                AI-assisted development with Codex, Claude Code and other AI
+                tools.
               </Typography>
             </Box>
 
@@ -71,6 +73,14 @@ export default function About() {
                 startIcon={<MailOutline />}
               >
                 Start a conversation
+              </Button>
+              <Button
+                href="/JuanJoseRodriguez2026-updated.pdf"
+                variant="outlined"
+                size="large"
+                startIcon={<Description />}
+              >
+                Download CV
               </Button>
             </Stack>
 
@@ -118,8 +128,9 @@ export default function About() {
                 What I bring
               </Typography>
               <Typography variant="body1" color="text.secondary">
-                Technical versatility, empathy with users and the discipline to
-                turn messy ideas into working software.
+                Technical versatility, Salesforce process experience,
+                AI-assisted delivery and the discipline to turn messy ideas into
+                working software.
               </Typography>
             </Box>
           </Box>

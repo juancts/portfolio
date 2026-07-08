@@ -1,5 +1,12 @@
 export const itemData = [
   {
+    title: "Salesforce booking system",
+    tech: "Salesforce, Apex, Flows, Workbench, Data Loader, Codex, Claude Code",
+    link: "https://jotar81.netlify.app/",
+    summary:
+      "Reservation workflows for sports courts, including fixed bookings, payment tracking, pending balances, dashboards, data migration support and AI-assisted development.",
+  },
+  {
     title: "Corporate web platform",
     tech: "HTML, PHP, MySQL, phpMyAdmin",
     link: "https://ctdominicana.com/",

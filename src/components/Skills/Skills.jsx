@@ -1,12 +1,15 @@
 import { Box, Chip, Container, Stack, Typography } from "@mui/material";
 import {
+  SiDatabricks,
   SiExpress,
   SiGithub,
   SiJavascript,
   SiNodedotjs,
+  SiOpenai,
   SiPostgresql,
   SiReact,
   SiRedux,
+  SiSalesforce,
   SiSequelize,
   SiTailwindcss,
   SiTypescript,
@@ -21,6 +24,10 @@ const skills = [
   { name: "Express", icon: SiExpress },
   { name: "PostgreSQL", icon: SiPostgresql },
   { name: "Sequelize", icon: SiSequelize },
+  { name: "Salesforce", icon: SiSalesforce },
+  { name: "Data Loader", icon: SiDatabricks },
+  { name: "Workbench", icon: SiDatabricks },
+  { name: "Codex / AI tools", icon: SiOpenai },
   { name: "Tailwind", icon: SiTailwindcss },
   { name: "GitHub", icon: SiGithub },
 ];
@@ -52,8 +59,9 @@ export default function Skills() {
               Technology with a human operating system.
             </Typography>
             <Typography color="text.secondary" sx={{ mt: 2, lineHeight: 1.7 }}>
-              I combine frontend, backend and database skills with the soft
-              skills needed to keep projects moving clearly.
+              I combine frontend, backend, Salesforce administration, data
+              migration and AI-assisted development with the soft skills needed
+              to keep projects moving clearly.
             </Typography>
             <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mt: 3 }}>
               {qualities.map((quality) => (
